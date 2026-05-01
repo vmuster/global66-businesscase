@@ -44,7 +44,7 @@ streamlit run src/dashboard/app.py
 
 **Postman / Insomnia:** `postman/voc_collection.json` o `Entregables/voc_postman_collection.json`.
 
-**Trazabilidad incluida (sin re-ejecutar batch):** `Entregables/data_outputs/traceability_dataset.csv`, `results_audit.json`, `cost_report.json`.
+**Trazabilidad incluida (sin re-ejecutar batch):** `Entregables/data_outputs/traceability_dataset.csv`, `results_audit.json`, `cost_report.json`, `escalations.jsonl`.
 
 ## Estructura principal
 
