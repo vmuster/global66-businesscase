@@ -2,7 +2,7 @@
 
 Sistema de automatización de **Voice of Customer** para fintech: ingesta vía webhook, análisis con LLM (salida JSON estructurada), triaje P1–P4 y escalación. Proyecto de prueba técnica — el evaluador configura su propia API key.
 
-**Repo de entrega:** https://github.com/vmuster/global66-businesscase · **One-pager (PDF):** `Entregables/One_Pager_Vicente_Muster.pdf`
+**Repo de entrega:** https://github.com/vmuster/global66-businesscase · **One-pager (PDF):** `Entregables/One_Pager_Vicente_Muster.pdf` · **Informe VoC (PDF, si está en la entrega):** `Entregables/Informe_VoC_dashboard.pdf` o `Informe_VoC.pdf`
 
 **Documentación:** [`Entregables/README_ENTREGA.md`](Entregables/README_ENTREGA.md) (guía principal) · **Manual paso a paso:** [`Entregables/code_source/GUIA_EVALUADOR.md`](Entregables/code_source/GUIA_EVALUADOR.md) · **Colab:** [`Entregables/notebook_colab/run_in_colab.ipynb`](Entregables/notebook_colab/run_in_colab.ipynb)
 
@@ -51,9 +51,9 @@ streamlit run src/dashboard/app.py
 - `src/` — API FastAPI, motor LLM, dashboards
 - `scripts/` — batch, evaluación, utilidades
 - `config/scoring.yaml` — reglas de scoring
-- `Entregables/` — prompt en texto, **one-pager en PDF**, colección HTTP, trazabilidad (`data_outputs/`), notebook Colab
+- `Entregables/` — prompt en texto, **one-pager en PDF**, **informe VoC en PDF** (si se incluye), colección HTTP, trazabilidad (`data_outputs/`), notebook Colab
 
-**One-pager:** únicamente `Entregables/One_Pager_Vicente_Muster.pdf`.
+**One-pager:** `Entregables/One_Pager_Vicente_Muster.pdf`. **Informe (opcional):** `Informe_VoC_dashboard.pdf` o `Informe_VoC.pdf`.
 
 ## Licencia y uso
 

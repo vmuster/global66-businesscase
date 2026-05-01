@@ -20,6 +20,7 @@ lingua-language-detector>=2.1
 # Dashboard
 streamlit>=1.40
 plotly>=5.24
+matplotlib>=3.9
 
 # Tests
 pytest>=8.3

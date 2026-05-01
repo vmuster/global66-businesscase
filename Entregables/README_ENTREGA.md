@@ -30,6 +30,8 @@ Opcional: **`Entregables/code_source/instrucciones_ia_setup.md`** — texto para
 Entregables/
 ├── README_ENTREGA.md                 ← este documento
 ├── One_Pager_Vicente_Muster.pdf      ← one-pager ejecutivo (único formato entregado aquí)
+├── Informe_VoC_dashboard.pdf         ← opcional: informe VoC (PDF generado fuera del repo, p. ej. LaTeX)
+├── Informe_VoC.pdf                   ← alias aceptado para el mismo informe (si usa este nombre)
 ├── system_prompt_final.txt           ← copia del prompt de análisis
 ├── voc_postman_collection.json       ← Postman / Insomnia
 ├── code_source/
@@ -45,7 +47,9 @@ Entregables/
     └── escalations.jsonl
 ```
 
-Tras cambiar código y volver a ejecutar el batch en un workspace completo, regenere estas salidas con `python scripts/post_batch_entrega.py` (ese script existe en el repo de trabajo del autor; en el repo público ya vienen exportadas).
+Tras cambiar código y volver a ejecutar el batch en un workspace completo, regenere estas salidas con `python scripts/post_batch_entrega.py` (ese script existe en el repo de trabajo del autor; en el repo público ya vienen exportadas listas para el jurado, sin volver a correr el batch).
+
+El **informe en PDF** (si lo entrega) se coloca en esta carpeta con nombre `Informe_VoC_dashboard.pdf` o `Informe_VoC.pdf`; el script `build_entrega_package.ps1` del autor lo copia al paquete público si existe.
 
 ---
 
@@ -122,17 +126,21 @@ Pestañas: Operación (escalaciones), Producto / weak points, Salud de marca, Co
 
 ---
 
-## Comportamientos verificados (resumen)
-
 - Multilingüe semántico (no solo keywords); idempotencia por `message_id`; pseudonimización de usuario; cadena de failover entre proveedores; **input guard** (payloads tipo `"string"` de Postman sin llamada al LLM); **override de hilo resuelto** (gratitud sin riesgo duro → no escalar).
 
 Limitaciones: posibles desajustes ±1 nivel vs etiqueta humana en un subconjunto pequeño; vigilar que `evidence_quote` sea literal del hilo.
 
 ---
 
+## Informe VoC (PDF)
+
+Si entrega el informe como PDF (p. ej. compilado con LaTeX en su máquina), colóquelo en esta carpeta como **`Informe_VoC_dashboard.pdf`** o **`Informe_VoC.pdf`**. No hace falta ningún script del repo para generarlo en el paquete público.
+
+---
+
 ## One-pager
 
-Único artefacto en esta carpeta: **`One_Pager_Vicente_Muster.pdf`**.
+**`One_Pager_Vicente_Muster.pdf`** (único one-pager en esta carpeta).
 
 ---
 
