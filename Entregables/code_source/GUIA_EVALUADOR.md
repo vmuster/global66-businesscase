@@ -28,15 +28,17 @@ Tras clonar o descomprimir el proyecto, la **raíz** es la carpeta que contiene 
 ├── postman/
 │   └── voc_collection.json          Colección Postman (copia en Entregables)
 ├── Entregables/                     Artefactos de entrega y documentación
-│   ├── README_ENTREGA.md            Mapa de la carpeta de entrega
+│   ├── README_ENTREGA.md            Guía principal de la entrega
+│   ├── One_Pager_Vicente_Muster.pdf One-pager ejecutivo
+│   ├── system_prompt_final.txt      Copia del prompt de análisis
 │   ├── voc_postman_collection.json  Misma colección que postman/voc_collection.json
+│   ├── data_outputs/                Trazabilidad del batch (CSV + JSON)
 │   ├── notebook_colab/
 │   │   └── run_in_colab.ipynb      Opción Google Colab
 │   └── code_source/
-│       ├── README.md                Empaquetado ZIP / clone
+│       ├── README.md                Punteros a esta guía y README_ENTREGA
 │       ├── GUIA_EVALUADOR.md        Este documento
 │       └── instrucciones_ia_setup.md  Texto para pegar en un asistente IA
-└── docs/                              Documentación técnica ampliada (opcional)
 ```
 
 ---

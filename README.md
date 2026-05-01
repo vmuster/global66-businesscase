@@ -2,9 +2,9 @@
 
 Sistema de automatización de **Voice of Customer** para fintech: ingesta vía webhook, análisis con LLM (salida JSON estructurada), triaje P1–P4 y escalación. Proyecto de prueba técnica — el evaluador configura su propia API key.
 
-**Repo de entrega:** https://github.com/vmuster/global66-businesscase · **One-pager (PDF):** `Entregables/One_Pager_Vicente_Muster.pdf` · HTML fuente: `Entregables/one_pager_final.html`
+**Repo de entrega:** https://github.com/vmuster/global66-businesscase · **One-pager (PDF):** `Entregables/One_Pager_Vicente_Muster.pdf`
 
-**Documentación de entrega:** [`Entregables/README_ENTREGA.md`](Entregables/README_ENTREGA.md) · **Manual del evaluador:** [`Entregables/code_source/GUIA_EVALUADOR.md`](Entregables/code_source/GUIA_EVALUADOR.md) · **Colab:** [`Entregables/notebook_colab/run_in_colab.ipynb`](Entregables/notebook_colab/run_in_colab.ipynb)
+**Documentación:** [`Entregables/README_ENTREGA.md`](Entregables/README_ENTREGA.md) (guía principal) · **Manual paso a paso:** [`Entregables/code_source/GUIA_EVALUADOR.md`](Entregables/code_source/GUIA_EVALUADOR.md) · **Colab:** [`Entregables/notebook_colab/run_in_colab.ipynb`](Entregables/notebook_colab/run_in_colab.ipynb)
 
 ## Requisitos
 
@@ -51,9 +51,9 @@ streamlit run src/dashboard/app.py
 - `src/` — API FastAPI, motor LLM, dashboards
 - `scripts/` — batch, evaluación, utilidades
 - `config/scoring.yaml` — reglas de scoring
-- `Entregables/` — prompt en texto, **one-pager (PDF)**, colección HTTP, trazabilidad (`data_outputs/`), notebook Colab
+- `Entregables/` — prompt en texto, **one-pager en PDF**, colección HTTP, trazabilidad (`data_outputs/`), notebook Colab
 
-**One-pager:** `Entregables/One_Pager_Vicente_Muster.pdf` y `Entregables/one_pager_final.html` (mismo contenido; el PDF es el entregable principal).
+**One-pager:** únicamente `Entregables/One_Pager_Vicente_Muster.pdf`.
 
 ## Licencia y uso
 
