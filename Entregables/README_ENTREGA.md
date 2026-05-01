@@ -29,7 +29,7 @@ Opcional: **`Entregables/code_source/instrucciones_ia_setup.md`** — texto para
 ```
 Entregables/
 ├── README_ENTREGA.md                 ← este documento
-├── One_Pager_Vicente_Muster.pdf      ← one-pager ejecutivo (único formato entregado aquí)
+├── Business Case VoC Global66 - Vicente Muster.pdf   ← one-pager ejecutivo (PDF para el jurado)
 ├── Informe_VoC_dashboard.pdf         ← opcional: informe VoC (PDF generado fuera del repo, p. ej. LaTeX)
 ├── Informe_VoC.pdf                   ← alias aceptado para el mismo informe (si usa este nombre)
 ├── system_prompt_final.txt           ← copia del prompt de análisis
@@ -140,7 +140,7 @@ Si entrega el informe como PDF (p. ej. compilado con LaTeX en su máquina), col�
 
 ## One-pager
 
-**`One_Pager_Vicente_Muster.pdf`** (único one-pager en esta carpeta).
+**`Business Case VoC Global66 - Vicente Muster.pdf`** — resumen ejecutivo para el jurado. (Si regenera desde el HTML maestro del autor, puede quedar como `One_Pager_Vicente_Muster.pdf`; renombre o copie a este nombre antes de empaquetar.)
 
 ---
 
