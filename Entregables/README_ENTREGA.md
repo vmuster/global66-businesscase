@@ -26,12 +26,14 @@ Opcional: **`Entregables/code_source/instrucciones_ia_setup.md`** — texto para
 
 ## Contenido de `Entregables/`
 
+En **`Entregables/`** van **dos PDF** (además del repo o ZIP): el **Business Case** (one-pager de negocio) y el **Informe VoC** (informe con gráficos). En el correo suele adjuntarse **ambos** más el enlace al repositorio y, si aplica, el ZIP.
+
 ```
 Entregables/
 ├── README_ENTREGA.md                 ← este documento
-├── Business Case VoC Global66 - Vicente Muster.pdf   ← one-pager ejecutivo (PDF para el jurado)
-├── Informe_VoC_dashboard.pdf         ← opcional: informe VoC (PDF generado fuera del repo, p. ej. LaTeX)
-├── Informe_VoC.pdf                   ← alias aceptado para el mismo informe (si usa este nombre)
+├── Business Case VoC Global66 - Vicente Muster.pdf   ← one-pager: caso y solución (texto ejecutivo)
+├── Informe_VoC.pdf                   ← informe con gráficos / tablero (vista analítica)
+├── Informe_VoC_dashboard.pdf      ← mismo rol si lo generaste con ese nombre al exportar
 ├── system_prompt_final.txt           ← copia del prompt de análisis
 ├── voc_postman_collection.json       ← Postman / Insomnia
 ├── code_source/
@@ -49,7 +51,12 @@ Entregables/
 
 Tras cambiar código y volver a ejecutar el batch en un workspace completo, regenere estas salidas con `python scripts/post_batch_entrega.py` (ese script existe en el repo de trabajo del autor; en el repo público ya vienen exportadas listas para el jurado, sin volver a correr el batch).
 
-El **informe en PDF** (si lo entrega) se coloca en esta carpeta con nombre `Informe_VoC_dashboard.pdf` o `Informe_VoC.pdf`; el script `build_entrega_package.ps1` del autor lo copia al paquete público si existe.
+Puede generar los PDF como quiera (LaTeX, export del dashboard, etc.): colóquelos en **`Entregables/`** con los nombres del árbol. El script `build_entrega_package.ps1` del autor copia al paquete público los archivos que existan.
+
+| PDF | Rol |
+|-----|-----|
+| **`Business Case VoC Global66 - Vicente Muster.pdf`** | One-pager: caso y solución, enfoque negocio / ejecutivo. |
+| **`Informe_VoC.pdf`** (o **`Informe_VoC_dashboard.pdf`**) | Informe con **gráficos** y métricas (vista analítica / tablero). |
 
 ---
 
@@ -132,18 +139,6 @@ Limitaciones: posibles desajustes ±1 nivel vs etiqueta humana en un subconjunto
 
 ---
 
-## Informe VoC (PDF)
-
-Si entrega el informe como PDF (p. ej. compilado con LaTeX en su máquina), colóquelo en esta carpeta como **`Informe_VoC_dashboard.pdf`** o **`Informe_VoC.pdf`**. No hace falta ningún script del repo para generarlo en el paquete público.
-
----
-
-## One-pager
-
-**`Business Case VoC Global66 - Vicente Muster.pdf`** — resumen ejecutivo para el jurado. (Si regenera desde el HTML maestro del autor, puede quedar como `One_Pager_Vicente_Muster.pdf`; renombre o copie a este nombre antes de empaquetar.)
-
----
-
 ## Si algo no corre
 
 1. `python --version` ≥ 3.11  
@@ -152,6 +147,8 @@ Si entrega el informe como PDF (p. ej. compilado con LaTeX en su máquina), col�
 4. API key correcta en `.env`  
 5. Mensajes de preflight/cuota del propio proveedor  
 
-Contacto en el PDF del one-pager.
+Contacto en el PDF **Business Case VoC**.
+
+**Correo al jurado (típico):** enlace al repo (y/o ZIP) + adjuntos **`Business Case VoC Global66 - Vicente Muster.pdf`** + **`Informe_VoC.pdf`** (o `Informe_VoC_dashboard.pdf` si usa ese nombre).
 
 — Vicente Muster

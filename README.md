@@ -2,7 +2,7 @@
 
 Sistema de automatización de **Voice of Customer** para fintech: ingesta vía webhook, análisis con LLM (salida JSON estructurada), triaje P1–P4 y escalación. Proyecto de prueba técnica — el evaluador configura su propia API key.
 
-**Repo de entrega:** https://github.com/vmuster/global66-businesscase · **One-pager (PDF):** `Entregables/Business Case VoC Global66 - Vicente Muster.pdf` · **Informe VoC (PDF, si está en la entrega):** `Entregables/Informe_VoC_dashboard.pdf` o `Informe_VoC.pdf`
+**Repo:** https://github.com/vmuster/global66-businesscase · **PDF en `Entregables/`:** **Business Case VoC** (one-pager ejecutivo) + **Informe VoC** con gráficos (`Informe_VoC.pdf` o `Informe_VoC_dashboard.pdf`). Ambos suelen adjuntarse en el correo junto al enlace (y ZIP si aplica).
 
 **Documentación:** [`Entregables/README_ENTREGA.md`](Entregables/README_ENTREGA.md) (guía principal) · **Manual paso a paso:** [`Entregables/code_source/GUIA_EVALUADOR.md`](Entregables/code_source/GUIA_EVALUADOR.md) · **Colab:** [`Entregables/notebook_colab/run_in_colab.ipynb`](Entregables/notebook_colab/run_in_colab.ipynb)
 
@@ -51,9 +51,9 @@ streamlit run src/dashboard/app.py
 - `src/` — API FastAPI, motor LLM, dashboards
 - `scripts/` — batch, evaluación, utilidades
 - `config/scoring.yaml` — reglas de scoring
-- `Entregables/` — prompt en texto, **one-pager en PDF**, **informe VoC en PDF** (si se incluye), colección HTTP, trazabilidad (`data_outputs/`), notebook Colab
+- `Entregables/` — prompt en texto, **Business Case VoC** (PDF one-pager), **Informe VoC** (PDF con gráficos), colección HTTP, trazabilidad (`data_outputs/`), notebook Colab
 
-**One-pager:** `Entregables/Business Case VoC Global66 - Vicente Muster.pdf`. **Informe (opcional):** `Informe_VoC_dashboard.pdf` o `Informe_VoC.pdf`.
+**One-pager (negocio):** `Entregables/Business Case VoC Global66 - Vicente Muster.pdf`. **Informe (gráficos):** `Entregables/Informe_VoC.pdf` (o `Informe_VoC_dashboard.pdf`).
 
 ## Licencia y uso
 
