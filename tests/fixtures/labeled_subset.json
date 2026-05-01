@@ -1,0 +1,719 @@
+{
+  "_meta": {
+    "version": 1,
+    "labeled_at": "2026-04-29",
+    "labeler": "agent_proposal_v1",
+    "review_status": "PENDING_HUMAN_REVIEW",
+    "instructions": [
+      "El owner del proyecto debe revisar y corregir cada caso.",
+      "Las etiquetas son DIRECCIONALES, no perfectas — sirven para medir si el LLM razona razonablemente.",
+      "expected_priority_in: lista de prioridades aceptables (al menos UNA debe coincidir).",
+      "expected_topics: el LLM debe detectar AL MENOS UNO de estos topics (recall ≥ 1).",
+      "expected_regulatory_flag_types: el LLM debe detectar al menos UNO si la lista no está vacía.",
+      "Si una etiqueta cambia, agregar nota en _meta.changelog explicando por qué."
+    ],
+    "selection_strategy": "30 casos estratificados: 6 fraude/seguridad, 6 dinero bloqueado/transferencias, 4 KYC/app, 4 soporte/queja, 4 neutros, 4 multilingüe, 2 edge",
+    "changelog": [
+      {
+        "at": "2026-05-01T12:29:39+00:00",
+        "note": "edited CASE-001"
+      },
+      {
+        "at": "2026-05-01T12:30:37+00:00",
+        "note": "approved CASE-002"
+      },
+      {
+        "at": "2026-05-01T12:31:18+00:00",
+        "note": "approved CASE-003"
+      },
+      {
+        "at": "2026-05-01T12:32:37+00:00",
+        "note": "approved CASE-004"
+      },
+      {
+        "at": "2026-05-01T12:33:05+00:00",
+        "note": "approved CASE-005"
+      },
+      {
+        "at": "2026-05-01T12:33:19+00:00",
+        "note": "approved CASE-006"
+      },
+      {
+        "at": "2026-05-01T12:33:51+00:00",
+        "note": "edited CASE-064"
+      },
+      {
+        "at": "2026-05-01T12:34:27+00:00",
+        "note": "approved CASE-007"
+      },
+      {
+        "at": "2026-05-01T12:35:03+00:00",
+        "note": "edited CASE-008"
+      },
+      {
+        "at": "2026-05-01T12:35:40+00:00",
+        "note": "edited CASE-009"
+      },
+      {
+        "at": "2026-05-01T12:36:49+00:00",
+        "note": "approved CASE-012"
+      },
+      {
+        "at": "2026-05-01T12:37:19+00:00",
+        "note": "edited CASE-013"
+      },
+      {
+        "at": "2026-05-01T12:37:47+00:00",
+        "note": "edited CASE-016"
+      },
+      {
+        "at": "2026-05-01T12:38:00+00:00",
+        "note": "approved CASE-018"
+      },
+      {
+        "at": "2026-05-01T12:38:13+00:00",
+        "note": "approved CASE-019"
+      },
+      {
+        "at": "2026-05-01T12:38:29+00:00",
+        "note": "approved CASE-020"
+      },
+      {
+        "at": "2026-05-01T12:40:49+00:00",
+        "note": "approved CASE-022"
+      },
+      {
+        "at": "2026-05-01T12:41:01+00:00",
+        "note": "approved CASE-063"
+      },
+      {
+        "at": "2026-05-01T12:42:29+00:00",
+        "note": "edited CASE-058"
+      },
+      {
+        "at": "2026-05-01T12:42:44+00:00",
+        "note": "approved CASE-023"
+      },
+      {
+        "at": "2026-05-01T12:43:00+00:00",
+        "note": "approved CASE-055"
+      },
+      {
+        "at": "2026-05-01T12:43:21+00:00",
+        "note": "approved CASE-026"
+      },
+      {
+        "at": "2026-05-01T12:44:26+00:00",
+        "note": "rejected CASE-052"
+      },
+      {
+        "at": "2026-05-01T12:44:54+00:00",
+        "note": "rejected CASE-051"
+      },
+      {
+        "at": "2026-05-01T12:45:08+00:00",
+        "note": "rejected CASE-027"
+      },
+      {
+        "at": "2026-05-01T12:45:56+00:00",
+        "note": "edited CASE-029"
+      },
+      {
+        "at": "2026-05-01T12:46:10+00:00",
+        "note": "rejected CASE-049"
+      },
+      {
+        "at": "2026-05-01T12:46:24+00:00",
+        "note": "approved CASE-043"
+      },
+      {
+        "at": "2026-05-01T12:46:43+00:00",
+        "note": "edited CASE-044"
+      },
+      {
+        "at": "2026-05-01T12:47:35+00:00",
+        "note": "edited CASE-045"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "case_id": "CASE-001",
+      "category": "money_blocked",
+      "expected_sentiment_label": "very_negative",
+      "expected_topics": [
+        "transfers"
+      ],
+      "expected_should_escalate": true,
+      "expected_priority_in": [
+        "p1",
+        "p2"
+      ],
+      "expected_regulatory_flag_types": [],
+      "expected_urgency_signals": [
+        "explicit_emergency",
+        "money_blocked",
+        "repeated_unanswered_contact"
+      ],
+      "notes": "Emergencia médica + dinero retenido + agente sin responder. Caso clásico p1.",
+      "review_status": "EDITED",
+      "reviewed_at": "2026-05-01T12:29:39+00:00"
+    },
+    {
+      "case_id": "CASE-002",
+      "category": "multilingual_kyc",
+      "expected_sentiment_label": "neutral",
+      "expected_topics": [
+        "kyc_onboarding",
+        "account_management"
+      ],
+      "expected_should_escalate": false,
+      "expected_priority_in": [
+        "p3",
+        "p4"
+      ],
+      "expected_regulatory_flag_types": [],
+      "notes": "Inglés, USA. Cambio de cuenta bancaria para refund. Hay urgencia leve por viaje pero no riesgo. El LLM podría flaggear fraud_suspected si lee 'change bank account' como takeover; aceptamos ambas lecturas.",
+      "review_status": "APPROVED",
+      "reviewed_at": "2026-05-01T12:30:37+00:00"
+    },
+    {
+      "case_id": "CASE-003",
+      "category": "fraud_security",
+      "expected_sentiment_label": "very_negative",
+      "expected_topics": [
+        "fraud_security",
+        "account_management"
+      ],
+      "expected_should_escalate": true,
+      "expected_priority_in": [
+        "p1"
+      ],
+      "expected_regulatory_flag_types": [
+        "fraud_suspected"
+      ],
+      "expected_urgency_signals": [
+        "explicit_emergency",
+        "money_blocked"
+      ],
+      "notes": "Cuenta hackeada desde Rusia, intentaron cambiar email. P1 fraude claro.",
+      "review_status": "APPROVED",
+      "reviewed_at": "2026-05-01T12:31:18+00:00"
+    },
+    {
+      "case_id": "CASE-004",
+      "category": "multilingual_kyc",
+      "expected_sentiment_label": "negative",
+      "expected_topics": [
+        "kyc_onboarding"
+      ],
+      "expected_should_escalate": false,
+      "expected_priority_in": [
+        "p2",
+        "p3"
+      ],
+      "expected_regulatory_flag_types": [],
+      "notes": "Portugués, Brasil. Validación CPF falla 5 veces. Frustración pero sin riesgo regulatorio.",
+      "review_status": "APPROVED",
+      "reviewed_at": "2026-05-01T12:32:37+00:00"
+    },
+    {
+      "case_id": "CASE-005",
+      "category": "money_blocked",
+      "expected_sentiment_label": "very_negative",
+      "expected_topics": [
+        "transfers"
+      ],
+      "expected_should_escalate": true,
+      "expected_priority_in": [
+        "p1",
+        "p2"
+      ],
+      "expected_regulatory_flag_types": [
+        "consumer_protection"
+      ],
+      "expected_urgency_signals": [
+        "threat_of_legal_action",
+        "money_blocked",
+        "repeated_unanswered_contact"
+      ],
+      "notes": "Amenaza CMF + abogados, semana sin resolver, cliente dice 'es un robo'. Compliance/retention.",
+      "review_status": "APPROVED",
+      "reviewed_at": "2026-05-01T12:33:05+00:00"
+    },
+    {
+      "case_id": "CASE-006",
+      "category": "neutral_query",
+      "expected_sentiment_label": "neutral",
+      "expected_topics": [
+        "cards",
+        "account_management"
+      ],
+      "expected_should_escalate": false,
+      "expected_priority_in": [
+        "p4"
+      ],
+      "expected_regulatory_flag_types": [],
+      "notes": "Pregunta sobre tarjeta para hijo. Decepción leve por respuesta negativa pero sin escalación.",
+      "review_status": "APPROVED",
+      "reviewed_at": "2026-05-01T12:33:19+00:00"
+    },
+    {
+      "case_id": "CASE-007",
+      "category": "transfers",
+      "expected_sentiment_label": "negative",
+      "expected_topics": [
+        "transfers"
+      ],
+      "expected_should_escalate": true,
+      "expected_priority_in": [
+        "p2",
+        "p3"
+      ],
+      "expected_regulatory_flag_types": [],
+      "expected_urgency_signals": [
+        "money_blocked"
+      ],
+      "notes": "Error de IBAN, transferencia 'completada' pero no llega. Cliente quiere recuperar fondos.",
+      "review_status": "APPROVED",
+      "reviewed_at": "2026-05-01T12:34:27+00:00"
+    },
+    {
+      "case_id": "CASE-008",
+      "category": "fraud_security",
+      "expected_sentiment_label": "negative",
+      "expected_topics": [
+        "fraud_security"
+      ],
+      "expected_should_escalate": true,
+      "expected_priority_in": [
+        "p2"
+      ],
+      "expected_regulatory_flag_types": [
+        "fraud_suspected",
+        "data_privacy"
+      ],
+      "notes": "Phishing telefónico + sospecha de filtración de datos. Compliance + fraud_ops.",
+      "expected_urgency_signals": [],
+      "review_status": "EDITED",
+      "reviewed_at": "2026-05-01T12:35:03+00:00"
+    },
+    {
+      "case_id": "CASE-009",
+      "category": "support_complaint",
+      "expected_sentiment_label": "negative",
+      "expected_topics": [
+        "fees_pricing"
+      ],
+      "expected_should_escalate": true,
+      "expected_priority_in": [
+        "p2",
+        "p3"
+      ],
+      "expected_regulatory_flag_types": [
+        "consumer_protection"
+      ],
+      "notes": "Acusación de publicidad engañosa + amenaza cerrar cuenta. Retention/compliance.",
+      "expected_urgency_signals": [],
+      "review_status": "EDITED",
+      "reviewed_at": "2026-05-01T12:35:40+00:00"
+    },
+    {
+      "case_id": "CASE-012",
+      "category": "neutral_query",
+      "expected_sentiment_label": "neutral",
+      "expected_topics": [
+        "transfers",
+        "fx_currency",
+        "fees_pricing"
+      ],
+      "expected_should_escalate": false,
+      "expected_priority_in": [
+        "p4"
+      ],
+      "expected_regulatory_flag_types": [],
+      "notes": "Consulta informativa. Tono curioso, sin queja.",
+      "review_status": "APPROVED",
+      "reviewed_at": "2026-05-01T12:36:49+00:00"
+    },
+    {
+      "case_id": "CASE-013",
+      "category": "edge_sensitive",
+      "expected_sentiment_label": "negative",
+      "expected_topics": [
+        "account_management"
+      ],
+      "expected_should_escalate": true,
+      "expected_priority_in": [
+        "p3"
+      ],
+      "expected_regulatory_flag_types": [],
+      "expected_urgency_signals": [
+        "explicit_emergency"
+      ],
+      "notes": "Fallecimiento del titular. Caso sensible, requiere atención humana empática. NO debe activar fraud.",
+      "review_status": "EDITED",
+      "reviewed_at": "2026-05-01T12:37:19+00:00"
+    },
+    {
+      "case_id": "CASE-016",
+      "category": "kyc_app",
+      "expected_sentiment_label": "negative",
+      "expected_topics": [
+        "kyc_onboarding",
+        "app_stability"
+      ],
+      "expected_should_escalate": true,
+      "expected_priority_in": [
+        "p3"
+      ],
+      "expected_regulatory_flag_types": [],
+      "expected_urgency_signals": [
+        "money_blocked"
+      ],
+      "notes": "10 intentos selfie + reinstalación + 'no puedo enviar dinero a mi familia'.",
+      "review_status": "EDITED",
+      "reviewed_at": "2026-05-01T12:37:47+00:00"
+    },
+    {
+      "case_id": "CASE-018",
+      "category": "fraud_security",
+      "expected_sentiment_label": "negative",
+      "expected_topics": [
+        "fraud_security"
+      ],
+      "expected_should_escalate": true,
+      "expected_priority_in": [
+        "p1"
+      ],
+      "expected_regulatory_flag_types": [
+        "fraud_suspected"
+      ],
+      "expected_urgency_signals": [
+        "explicit_emergency"
+      ],
+      "notes": "Celular perdido + sesión activa + alguien acaba de iniciar sesión. P1.",
+      "review_status": "APPROVED",
+      "reviewed_at": "2026-05-01T12:38:00+00:00"
+    },
+    {
+      "case_id": "CASE-019",
+      "category": "multilingual_app",
+      "expected_sentiment_label": "negative",
+      "expected_topics": [
+        "app_stability"
+      ],
+      "expected_should_escalate": false,
+      "expected_priority_in": [
+        "p3",
+        "p4"
+      ],
+      "expected_regulatory_flag_types": [],
+      "notes": "Inglés en Colombia. App atrapada en portugués. Bug, no urgencia.",
+      "review_status": "APPROVED",
+      "reviewed_at": "2026-05-01T12:38:13+00:00"
+    },
+    {
+      "case_id": "CASE-020",
+      "category": "fraud_security",
+      "expected_sentiment_label": "negative",
+      "expected_topics": [
+        "fraud_security"
+      ],
+      "expected_should_escalate": true,
+      "expected_priority_in": [
+        "p2",
+        "p3"
+      ],
+      "expected_regulatory_flag_types": [
+        "fraud_suspected"
+      ],
+      "notes": "Reporta phishing externo (no es víctima directa pero alerta). fraud_ops.",
+      "review_status": "APPROVED",
+      "reviewed_at": "2026-05-01T12:38:29+00:00"
+    },
+    {
+      "case_id": "CASE-022",
+      "category": "neutral_query",
+      "expected_sentiment_label": "neutral",
+      "expected_topics": [
+        "cards",
+        "fx_currency"
+      ],
+      "expected_should_escalate": false,
+      "expected_priority_in": [
+        "p4"
+      ],
+      "expected_regulatory_flag_types": [],
+      "notes": "Reino Unido. Consulta informativa sobre tarjeta y conversión. Tono positivo/curioso.",
+      "review_status": "APPROVED",
+      "reviewed_at": "2026-05-01T12:40:49+00:00"
+    },
+    {
+      "case_id": "CASE-023",
+      "category": "kyc_app",
+      "expected_sentiment_label": "negative",
+      "expected_topics": [
+        "app_stability"
+      ],
+      "expected_should_escalate": true,
+      "expected_priority_in": [
+        "p2",
+        "p3"
+      ],
+      "expected_regulatory_flag_types": [],
+      "notes": "2 días sin acceso + 'amigos también lo tienen' = posible incidencia masiva. engineering/tier2.",
+      "review_status": "APPROVED",
+      "reviewed_at": "2026-05-01T12:42:44+00:00"
+    },
+    {
+      "case_id": "CASE-026",
+      "category": "multilingual_app",
+      "expected_sentiment_label": "negative",
+      "expected_topics": [
+        "app_stability"
+      ],
+      "expected_should_escalate": false,
+      "expected_priority_in": [
+        "p4"
+      ],
+      "expected_regulatory_flag_types": [],
+      "notes": "Portugués Brasil. Errores menores de traducción. Bug cosmético.",
+      "review_status": "APPROVED",
+      "reviewed_at": "2026-05-01T12:43:21+00:00"
+    },
+    {
+      "case_id": "CASE-027",
+      "category": "support_complaint",
+      "expected_sentiment_label": "negative",
+      "expected_topics": [
+        "fees_pricing",
+        "account_management"
+      ],
+      "expected_should_escalate": true,
+      "expected_priority_in": [
+        "p2",
+        "p3"
+      ],
+      "expected_regulatory_flag_types": [
+        "unauthorized_charge"
+      ],
+      "notes": "Suscripción cancelada sigue cobrando = cargo no autorizado desde la perspectiva del cliente.",
+      "review_status": "REJECTED",
+      "reviewed_at": "2026-05-01T12:45:08+00:00"
+    },
+    {
+      "case_id": "CASE-029",
+      "category": "edge_accessibility",
+      "expected_sentiment_label": "neutral",
+      "expected_topics": [
+        "kyc_onboarding"
+      ],
+      "expected_should_escalate": true,
+      "expected_priority_in": [
+        "p3",
+        "p4"
+      ],
+      "expected_regulatory_flag_types": [],
+      "notes": "Accesibilidad: usuario sordo. Importante NO activar fraud y SÍ ofrecer ruta humana.",
+      "expected_urgency_signals": [],
+      "review_status": "EDITED",
+      "reviewed_at": "2026-05-01T12:45:56+00:00"
+    },
+    {
+      "case_id": "CASE-043",
+      "category": "neutral_query",
+      "expected_sentiment_label": "positive",
+      "expected_topics": [
+        "account_management",
+        "fees_pricing"
+      ],
+      "expected_should_escalate": false,
+      "expected_priority_in": [
+        "p4"
+      ],
+      "expected_regulatory_flag_types": [],
+      "notes": "Cliente comparando favorablemente vs. su banco actual. Tono positivo.",
+      "review_status": "APPROVED",
+      "reviewed_at": "2026-05-01T12:46:24+00:00"
+    },
+    {
+      "case_id": "CASE-044",
+      "category": "kyc_app",
+      "expected_sentiment_label": "negative",
+      "expected_topics": [
+        "kyc_onboarding"
+      ],
+      "expected_should_escalate": true,
+      "expected_priority_in": [
+        "p3",
+        "p4"
+      ],
+      "expected_regulatory_flag_types": [],
+      "notes": "Bug detector RUT. Bajo riesgo, pero debe revisar humano.",
+      "expected_urgency_signals": [],
+      "review_status": "EDITED",
+      "reviewed_at": "2026-05-01T12:46:43+00:00"
+    },
+    {
+      "case_id": "CASE-045",
+      "category": "money_blocked",
+      "expected_sentiment_label": "very_negative",
+      "expected_topics": [
+        "transfers",
+        "support_quality"
+      ],
+      "expected_should_escalate": true,
+      "expected_priority_in": [
+        "p3"
+      ],
+      "expected_regulatory_flag_types": [],
+      "expected_urgency_signals": [
+        "money_blocked",
+        "repeated_unanswered_contact"
+      ],
+      "notes": "Transferencia Venezuela + familia espera + queja por falta de comunicación pública.",
+      "review_status": "EDITED",
+      "reviewed_at": "2026-05-01T12:47:35+00:00"
+    },
+    {
+      "case_id": "CASE-049",
+      "category": "support_complaint",
+      "expected_sentiment_label": "negative",
+      "expected_topics": [
+        "cards"
+      ],
+      "expected_should_escalate": false,
+      "expected_priority_in": [
+        "p3",
+        "p4"
+      ],
+      "expected_regulatory_flag_types": [],
+      "notes": "Defecto producto pero cliente dispuesto a reposición. Sentimiento mixto.",
+      "review_status": "REJECTED",
+      "reviewed_at": "2026-05-01T12:46:10+00:00"
+    },
+    {
+      "case_id": "CASE-051",
+      "category": "money_blocked",
+      "expected_sentiment_label": "negative",
+      "expected_topics": [
+        "transfers"
+      ],
+      "expected_should_escalate": true,
+      "expected_priority_in": [
+        "p2",
+        "p3"
+      ],
+      "expected_regulatory_flag_types": [],
+      "expected_urgency_signals": [
+        "money_blocked"
+      ],
+      "notes": "72h, código Swift mal, urgencia por arriendo.",
+      "review_status": "REJECTED",
+      "reviewed_at": "2026-05-01T12:44:54+00:00"
+    },
+    {
+      "case_id": "CASE-052",
+      "category": "support_complaint",
+      "expected_sentiment_label": "negative",
+      "expected_topics": [
+        "fees_pricing"
+      ],
+      "expected_should_escalate": false,
+      "expected_priority_in": [
+        "p3",
+        "p4"
+      ],
+      "expected_regulatory_flag_types": [
+        "consumer_protection"
+      ],
+      "notes": "Comisión por inactividad reclamada. Posible flag de consumer_protection (T&C abusivos).",
+      "review_status": "REJECTED",
+      "reviewed_at": "2026-05-01T12:44:26+00:00"
+    },
+    {
+      "case_id": "CASE-055",
+      "category": "fraud_security",
+      "expected_sentiment_label": "very_negative",
+      "expected_topics": [
+        "fraud_security"
+      ],
+      "expected_should_escalate": true,
+      "expected_priority_in": [
+        "p1",
+        "p2"
+      ],
+      "expected_regulatory_flag_types": [
+        "fraud_suspected"
+      ],
+      "expected_urgency_signals": [
+        "money_blocked"
+      ],
+      "notes": "Estafa por WhatsApp hackeado + denuncia policial. Fraud_ops, posible reembolso al tercero.",
+      "review_status": "APPROVED",
+      "reviewed_at": "2026-05-01T12:43:00+00:00"
+    },
+    {
+      "case_id": "CASE-058",
+      "category": "multilingual_money_blocked",
+      "expected_sentiment_label": "very_negative",
+      "expected_topics": [
+        "cards"
+      ],
+      "expected_should_escalate": true,
+      "expected_priority_in": [
+        "p1",
+        "p2"
+      ],
+      "expected_regulatory_flag_types": [],
+      "expected_urgency_signals": [
+        "explicit_emergency",
+        "money_blocked"
+      ],
+      "notes": "Francia, español/francés mixto. Tarjeta rechazada en hotel 11pm. P1 por urgencia humana (sin alojamiento).",
+      "review_status": "EDITED",
+      "reviewed_at": "2026-05-01T12:42:29+00:00"
+    },
+    {
+      "case_id": "CASE-063",
+      "category": "fraud_security",
+      "expected_sentiment_label": "very_negative",
+      "expected_topics": [
+        "fraud_security"
+      ],
+      "expected_should_escalate": true,
+      "expected_priority_in": [
+        "p1"
+      ],
+      "expected_regulatory_flag_types": [
+        "fraud_suspected"
+      ],
+      "expected_urgency_signals": [
+        "explicit_emergency"
+      ],
+      "notes": "Cambio de clave no solicitado + SMS de retiro en curso. Ataque activo.",
+      "review_status": "APPROVED",
+      "reviewed_at": "2026-05-01T12:41:01+00:00"
+    },
+    {
+      "case_id": "CASE-064",
+      "category": "transfers",
+      "expected_sentiment_label": "neutral",
+      "expected_topics": [
+        "transfers",
+        "fees_pricing"
+      ],
+      "expected_should_escalate": false,
+      "expected_priority_in": [
+        "p3",
+        "p4"
+      ],
+      "expected_regulatory_flag_types": [],
+      "notes": "Reclamo por comisión perdida en transferencia rechazada. Importe bajo, baja urgencia.",
+      "expected_urgency_signals": [],
+      "review_status": "EDITED",
+      "reviewed_at": "2026-05-01T12:33:51+00:00"
+    }
+  ]
+}

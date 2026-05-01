@@ -1,0 +1,36 @@
+# Pesos y umbrales del motor de triaje.
+# Documentado en docs/04_scoring_and_escalation.md
+
+weights:
+  # Recalibración 2026-05-01: bajar severity (inflaba priority_math → p1) y subir
+  # señales regulatorias/urgencia para no perder recall en compliance.
+  severity: 0.30
+  regulatory_risk: 0.30
+  urgency_expressed: 0.25
+  sentiment_negativity: 0.15
+
+urgency:
+  explicit_emergency: 0.40
+  human_safety_risk: 0.40
+  money_blocked: 0.25
+  threat_of_legal_action: 0.20
+  repeated_unanswered_contact: 0.10
+  intensity_factor: 0.10
+
+regulatory:
+  high_confidence_threshold: 0.7
+  high_score: 1.0
+  low_score: 0.5
+
+sla:
+  enabled: true
+  full_penalty_hours: 24
+  max_multiplier: 1.5
+
+thresholds:
+  # Umbral p1 más estricto: menos falsos p1 por la fórmula (ver docs/sesion_viernes.md).
+  p1_critical: 0.82
+  p2_high: 0.60
+  p3_medium: 0.40
+  escalate_to_human_above: 0.60
+  low_confidence_review: 0.50

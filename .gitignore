@@ -1,0 +1,33 @@
+# ── Entorno y secretos (NUNCA subir) ──
+.env
+.env.*
+!.env.example
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# ── Datos generados localmente (regenerables) ──
+data/voc.db
+data/voc.db-journal
+data/voc.db-shm
+data/voc.db-wal
+data/results_audit.json
+data/cost_report.json
+data/escalations.jsonl
+data/_backup_*/
+reports/
+
+# ── IDE / SO ──
+.vscode/
+.idea/
+.streamlit/
+.DS_Store
+Thumbs.db
+
+# ── Artefactos locales de one-pager (PDF = entregable; HTML solo intermedio del script) ──
+Entregables/One_Pager_Vicente_Muster.html
+
+# Nota: Entregables/data_outputs/ SÍ forma parte del repo público (trazabilidad del caso).

@@ -1,0 +1,34 @@
+{
+  "provider": "(resumed)",
+  "model": "gemini-2.5-flash-lite",
+  "messages_processed": 250,
+  "messages_failed": 0,
+  "messages_resumed_from_db": 250,
+  "tokens_in_total": 796553,
+  "tokens_out_total": 56443,
+  "tokens_in_avg": 3186.21,
+  "tokens_out_avg": 225.77,
+  "price_per_1m_usd": {
+    "in": 0.1,
+    "out": 0.4
+  },
+  "cost_total_usd": 0.102233,
+  "cost_per_message_usd": 0.00040893,
+  "projection_100k_monthly_usd": 40.893,
+  "cost_by_model": {
+    "gemini-2.5-flash-lite": {
+      "calls": 250,
+      "tokens_in": 796553,
+      "tokens_out": 56443,
+      "cost_usd": 0.102233,
+      "price_per_1m_usd": {
+        "in": 0.1,
+        "out": 0.4
+      }
+    }
+  },
+  "p50_latency_ms": 8438,
+  "p95_latency_ms": 22193,
+  "duration_seconds": 0.0,
+  "throughput_msgs_per_sec": null
+}

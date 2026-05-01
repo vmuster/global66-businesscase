@@ -1,0 +1,202 @@
+{
+  "info": {
+    "name": "Global66 VoC Intelligence",
+    "_postman_id": "g66-voc-2026-04",
+    "description": "Casos de prueba para el webhook de análisis VoC. Compatible con Postman e Insomnia.\n\nVariables de entorno requeridas:\n  base_url  →  http://localhost:8000\n",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:8000" }
+  ],
+  "item": [
+    {
+      "name": "00 — Health",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/health"
+      }
+    },
+    {
+      "name": "01 — Sync: emergencia médica + dinero retenido (P1)",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/webhook",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"case_id\": \"CASE-TEST-001\",\n  \"message_id\": \"MSG-TEST-001\",\n  \"user_id\": \"USR-T1\",\n  \"direction\": \"INBOUND\",\n  \"text\": \"¡Ya pasaron las 24h y mi familia necesita la plata para una cirugía hoy! Por favor.\",\n  \"platform\": \"whatsapp\",\n  \"pais_usuario\": \"Chile\",\n  \"timestamp\": \"2026-04-29T13:55:00Z\"\n}"
+        }
+      }
+    },
+    {
+      "name": "02 — Sync: cuenta hackeada (fraude P1)",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/webhook",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"case_id\": \"CASE-TEST-002\",\n  \"message_id\": \"MSG-TEST-002\",\n  \"user_id\": \"USR-T2\",\n  \"direction\": \"INBOUND\",\n  \"text\": \"Mi cuenta fue hackeada, dice que entraron desde Rusia. ¡Bloqueen todo por favor!\",\n  \"platform\": \"app\",\n  \"pais_usuario\": \"Perú\"\n}"
+        }
+      }
+    },
+    {
+      "name": "03 — Sync: typo intencional 'rovo' / 'estafasión' (debe detectar fraude)",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/webhook",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"case_id\": \"CASE-TEST-003\",\n  \"message_id\": \"MSG-TEST-003\",\n  \"user_id\": \"USR-T3\",\n  \"direction\": \"INBOUND\",\n  \"text\": \"Esto es un rovo, una estafasión total. Quiero mi plata de vuelta o voy a la CMF.\",\n  \"platform\": \"email\",\n  \"pais_usuario\": \"Chile\"\n}"
+        }
+      }
+    },
+    {
+      "name": "04 — Sync: inglés 'this is a scam' (multilingüe)",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/webhook",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"case_id\": \"CASE-TEST-004\",\n  \"message_id\": \"MSG-TEST-004\",\n  \"user_id\": \"USR-T4\",\n  \"direction\": \"INBOUND\",\n  \"text\": \"This is a scam, my money is gone and nobody answers. I will file a complaint with the CFPB.\",\n  \"platform\": \"email\",\n  \"pais_usuario\": \"USA\"\n}"
+        }
+      }
+    },
+    {
+      "name": "05 — Sync: portugués 'lavagem de dinheiro' (compliance)",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/webhook",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"case_id\": \"CASE-TEST-005\",\n  \"message_id\": \"MSG-TEST-005\",\n  \"user_id\": \"USR-T5\",\n  \"direction\": \"INBOUND\",\n  \"text\": \"Acho que essa transação parece lavagem de dinheiro, recebi valores estranhos sem explicação.\",\n  \"platform\": \"whatsapp\",\n  \"pais_usuario\": \"Brasil\"\n}"
+        }
+      }
+    },
+    {
+      "name": "06 — Sync: francés 'on m'a volé le compte' (multilingüe)",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/webhook",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"case_id\": \"CASE-TEST-006\",\n  \"message_id\": \"MSG-TEST-006\",\n  \"user_id\": \"USR-T6\",\n  \"direction\": \"INBOUND\",\n  \"text\": \"On m'a volé le compte, je n'arrive plus à me connecter. Bloquez tout maintenant!\",\n  \"platform\": \"app\",\n  \"pais_usuario\": \"Francia\"\n}"
+        }
+      }
+    },
+    {
+      "name": "07 — Sync: caso neutro / consulta informativa (no escala)",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/webhook",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"case_id\": \"CASE-TEST-007\",\n  \"message_id\": \"MSG-TEST-007\",\n  \"user_id\": \"USR-T7\",\n  \"direction\": \"INBOUND\",\n  \"text\": \"Hola, ¿cuál es la comisión por enviar dinero a Japón? Solo quería saber.\",\n  \"platform\": \"app\",\n  \"pais_usuario\": \"Chile\"\n}"
+        }
+      }
+    },
+    {
+      "name": "08 — Sync: portugués positivo (no escala)",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/webhook",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"case_id\": \"CASE-TEST-008\",\n  \"message_id\": \"MSG-TEST-008\",\n  \"user_id\": \"USR-T8\",\n  \"direction\": \"INBOUND\",\n  \"text\": \"Adoro o app, está funcionando muito bem. Obrigado pelo atendimento rápido!\",\n  \"platform\": \"app\",\n  \"pais_usuario\": \"Brasil\"\n}"
+        }
+      }
+    },
+    {
+      "name": "09 — Idempotencia: reenvío del mismo MSG-TEST-001",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/webhook",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"case_id\": \"CASE-TEST-001\",\n  \"message_id\": \"MSG-TEST-001\",\n  \"user_id\": \"USR-T1\",\n  \"direction\": \"INBOUND\",\n  \"text\": \"reenvío del mismo mensaje — no debe duplicar análisis ni cobrar tokens\",\n  \"platform\": \"whatsapp\",\n  \"pais_usuario\": \"Chile\"\n}"
+        }
+      }
+    },
+    {
+      "name": "10 — Async: encolar (?async=true)",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/webhook?async=true",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"case_id\": \"CASE-TEST-010\",\n  \"message_id\": \"MSG-TEST-010\",\n  \"user_id\": \"USR-T10\",\n  \"direction\": \"INBOUND\",\n  \"text\": \"Mensaje normal procesado en background.\",\n  \"platform\": \"app\",\n  \"pais_usuario\": \"México\"\n}"
+        }
+      }
+    },
+    {
+      "name": "11 — Edge: solo emojis (confianza baja)",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/webhook",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"case_id\": \"CASE-TEST-011\",\n  \"message_id\": \"MSG-TEST-011\",\n  \"user_id\": \"USR-T11\",\n  \"direction\": \"INBOUND\",\n  \"text\": \"😡😡😡😤\",\n  \"platform\": \"app\",\n  \"pais_usuario\": \"Argentina\"\n}"
+        }
+      }
+    },
+    {
+      "name": "12 — Edge: mensaje muy corto",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/webhook",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"case_id\": \"CASE-TEST-012\",\n  \"message_id\": \"MSG-TEST-012\",\n  \"user_id\": \"USR-T12\",\n  \"direction\": \"INBOUND\",\n  \"text\": \"no funciona app\",\n  \"platform\": \"app\",\n  \"pais_usuario\": \"Colombia\"\n}"
+        }
+      }
+    },
+    {
+      "name": "13 — Edge: mezcla de idiomas",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/webhook",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"case_id\": \"CASE-TEST-013\",\n  \"message_id\": \"MSG-TEST-013\",\n  \"user_id\": \"USR-T13\",\n  \"direction\": \"INBOUND\",\n  \"text\": \"Hola, my account está bloqueada and I need ayuda urgente please.\",\n  \"platform\": \"email\",\n  \"pais_usuario\": \"USA\"\n}"
+        }
+      }
+    },
+    {
+      "name": "14 — Validación: payload sin 'text' (debe responder 422)",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/webhook",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"case_id\": \"CASE-TEST-014\",\n  \"message_id\": \"MSG-TEST-014\",\n  \"user_id\": \"USR-T14\",\n  \"direction\": \"INBOUND\",\n  \"platform\": \"app\",\n  \"pais_usuario\": \"Chile\"\n}"
+        }
+      }
+    },
+    {
+      "name": "15 — GET /case/{id} — auditoría",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/case/CASE-TEST-001"
+      }
+    },
+    {
+      "name": "16 — GET /escalations — cola de humanos",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/escalations?limit=20"
+      }
+    }
+  ]
+}
